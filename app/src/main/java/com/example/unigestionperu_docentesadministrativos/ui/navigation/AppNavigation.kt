@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.example.unigestionperu_docentesadministrativos.ui.screens.*
 import com.example.unigestionperu_docentesadministrativos.viewmodel.AdminViewModel
 import com.example.unigestionperu_docentesadministrativos.viewmodel.AuthViewModel
+import com.example.unigestionperu_docentesadministrativos.viewmodel.SyncViewModel
 import com.example.unigestionperu_docentesadministrativos.viewmodel.TeacherViewModel
 
 sealed class Screen(val route: String) {
@@ -17,6 +18,7 @@ sealed class Screen(val route: String) {
     object Login : Screen("login")
     object Home : Screen("home")
     object AdminHome : Screen("admin_home")
+    object Sync : Screen("sync")
     object CursoDetail : Screen("curso_detail/{cursoId}") {
         fun createRoute(cursoId: Long) = "curso_detail/$cursoId"
     }
@@ -27,6 +29,7 @@ fun AppNavigation(navController: NavHostController) {
     val authViewModel: AuthViewModel = viewModel()
     val teacherViewModel: TeacherViewModel = viewModel()
     val adminViewModel: AdminViewModel = viewModel()
+    val syncViewModel: SyncViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -65,6 +68,9 @@ fun AppNavigation(navController: NavHostController) {
                 onCourseClick = { cursoId ->
                     navController.navigate(Screen.CursoDetail.createRoute(cursoId))
                 },
+                onOpenSync = {
+                    navController.navigate(Screen.Sync.route)
+                },
                 onLogout = {
                     authViewModel.logout()
                     navController.navigate(Screen.Login.route) {
@@ -78,11 +84,22 @@ fun AppNavigation(navController: NavHostController) {
             AdministrativoHomeScreen(
                 admin = usuarioLogueado,
                 adminViewModel = adminViewModel,
+                onOpenSync = {
+                    navController.navigate(Screen.Sync.route)
+                },
                 onLogout = {
                     authViewModel.logout()
                     navController.navigate(Screen.Login.route) {
                         popUpTo(Screen.AdminHome.route) { inclusive = true }
                     }
+                }
+            )
+        }
+        composable(Screen.Sync.route) {
+            SyncScreen(
+                syncViewModel = syncViewModel,
+                onBack = {
+                    navController.popBackStack()
                 }
             )
         }

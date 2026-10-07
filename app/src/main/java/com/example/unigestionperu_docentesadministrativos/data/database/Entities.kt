@@ -35,3 +35,16 @@ data class MatriculaEntity(
     val examenFinal: Double = 0.0,
     val promedio: Double = 0.0
 )
+
+@Entity(tableName = "salones")
+data class SalonEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0L,
+    val codigo: String,         // Ej: "Aula A-101", "Lab-201"
+    val edificio: String,       // Ej: "Pabellón A", "Pabellón B"
+    val capacidad: Int = 40,    // Cupos Máximos
+    val ocupados: Int = 0,      // Cupos Ocupados
+    val tipo: String = "Teoría", // Ej: "Teoría", "Laboratorio", "Virtual"
+    val docenteAsignado: String = "Sin Asignar", // Ej: "Dr. Carlos Mendoza"
+    val horario: String = "Lun y Mié 08:00 - 10:00 AM" // Horario
+)

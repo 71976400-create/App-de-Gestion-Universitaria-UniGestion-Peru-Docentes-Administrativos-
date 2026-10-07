@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Punto Superior Izquierdo (Púrpura / Magenta) -->
+    <path
+        android:fillColor="#A304A3"
+        android:pathData="M 25,20 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+
+    <!-- Punto Superior Central (Morado) -->
+    <path
+        android:fillColor="#6802C1"
+        android:pathData="M 50,26 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+
+    <!-- Punto Superior Derecho (Púrpura / Magenta) -->
+    <path
+        android:fillColor="#A304A3"
+        android:pathData="M 75,20 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+
+    <!-- Brazo Izquierdo del Logo 'U' -->
+    <path android:pathData="M 25,32 C 20,55 31,82 50,86 C 41,80 32,58 37,36 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="25"
+                android:startY="32"
+                android:endX="50"
+                android:endY="86"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#0202C6" />
+                <item android:offset="1.0" android:color="#6802C1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Brazo Derecho del Logo 'U' -->
+    <path android:pathData="M 75,32 C 80,55 69,82 50,86 C 59,80 68,58 63,36 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="75"
+                android:startY="32"
+                android:endX="50"
+                android:endY="86"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#0202C6" />
+                <item android:offset="1.0" android:color="#6802C1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

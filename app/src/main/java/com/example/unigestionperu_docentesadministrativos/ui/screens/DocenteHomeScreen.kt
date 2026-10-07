@@ -17,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.unigestionperu_docentesadministrativos.data.database.CursoEntity
-import com.example.unigestionperu_docentesadministrativos.data.database.UsuarioEntity
+import com.example.unigestionperu_docentesadministrativos.data.local.entities.CursoEntity
+import com.example.unigestionperu_docentesadministrativos.data.local.entities.UsuarioEntity
 import com.example.unigestionperu_docentesadministrativos.viewmodel.TeacherViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)

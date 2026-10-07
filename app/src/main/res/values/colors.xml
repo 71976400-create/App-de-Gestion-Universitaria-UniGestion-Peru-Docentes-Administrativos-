@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- UniGestión Perú Brand Colors -->
+    <color name="uc_azul">#0202C6</color>
+    <color name="uc_morado">#6802C1</color>
+    <color name="uc_purpura">#A304A3</color>
+    <color name="uc_negro">#212322</color>
+    <color name="uc_blanco">#FFFFFF</color>
+    <color name="uc_gris_claro">#F5F5F5</color>
+    <color name="uc_gris_texto">#666666</color>
 </resources>
